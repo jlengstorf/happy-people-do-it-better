@@ -5,12 +5,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>reveal.js + Jade - The HTML Presentation Framework</title>
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Jade by @jlengstorf.">
-    <meta name="author" content="Hakim El Hattab">
+    <title>Happy People Do It Better</title>
+    <meta name="description" content="A Look at Work-Life Balance and Long-Term Productivity">
+    <meta name="author" content="Jason Lengstorf">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cloud.typography.com/6102252/617726/css/fonts.css">
+    <link rel="stylesheet" href="css/theme/lengstorf.css" id="template">
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
@@ -25,303 +27,493 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Reveal.js + Jade</h1>
-          <h3>A shortcut for faster slideshow authoring.</h3>
-          <p><small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / 
-              <a href="https://twitter.com/hakimel">@hakimel</a></small></p>
-          <p><small>Ported to <a href="http://jade-lang.com">Jade</a> by 
-              <a href="http://lengstorf.com">Jason Lengstorf</a> / 
-              <a href="https://twitter.com/jlengstorf">jlengstorf</a>
-              </small></p>
+          <h1>Happy People<br>Do It Better</h1>
+          <p>Avoiding Burnout and Increasing Happiness<br>by Creating Better Work-Life Balance</p>
+          <p>by <a href="http://lengstorf.com/">Jason Lengstorf</a><br><small><a href="https://twitter.com/jlengstorf">jlengstorf</a> |&nbsp;<a href="mailto:jason@lengstorf.com">jason@lengstorf.com</a></small></p>
         </section>
-        <section>
-          <h2>Hello there</h2>
-          <p>
-            reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-            
-          </p>
-        </section>
-        <section>
-          <section>
-            <h2>Vertical slides</h2>
-            <p>Slides can be nested inside of each other.</p><br><a href="#" class="navigate-down"><img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-          </section>
-          <section>
-            <h2>Basement Level 1</h2>
-            <p>
-              Nested slides are useful for adding additional detail underneath a high level horizontal slide.
-              
-            </p>
-          </section>
-          <section>
-            <h2>Basement Level 2</h2>
-            <p>That's it, time to go back up.</p><br><a href="#/2"><img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg)"></a>
-          </section>
-        </section>
-        <section>
-          <h2>Slides</h2>
-          <p>Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-            
-          </p>
-        </section>
-        <section>
-          <h2>Point of View</h2>
-          <p>Press <strong>ESC</strong> to enter the slide overview.</p>
-          <p>Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-            
-          </p>
-        </section>
-        <section>
-          <h2>Touch Optimized</h2>
-          <p>
-            Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-            
-          </p>
-        </section>
-        <section data-markdown>
-          <script type="text/template">
-            ## Markdown Support
-            
-            Write content using inline or external Markdown.
-            Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-            
-            ```
-            <section data-markdown>
-              ## Markdown support
-            
-              Write content using inline or external Markdown.
-              Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-            </section>
-            ```
-            
-          </script>
-        </section>
-        <section>
-          <section id="fragments">
-            <h2>Fragments</h2>
-            <p>Hit the next arrow...</p>
-            <p class="fragment">... to step through ...</p>
-            <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span>
-              
-            </p>
-            <aside class="notes">
-              <This>slide has fragments which are also stepped through in the notes window.</This>
-            </aside>
-          </section>
-          <section>
-            <h2>Fragment Styles</h2>
-            <p>There are different types of fragments, like:</p>
-            <p class="grow fragment">type</p>
-            <p class="shrink fragment">type</p>
-            <p class="fade-out fragment">type</p>
-            <p class="current-visible fragment">type</p>
-            <p class="highlight-red fragment">type</p>
-            <p class="highlight-blue fragment">type</p>
-          </section>
-        </section>
-        <section id="transitions">
-          <h2>Transition Styles</h2>
-          <p>You can select from different transitions, like:<br><a href="?transition=none#/transitions">None</a> - <a href="?transition=fade#/transitions">Fade</a> - <a href="?transition=slide#/transitions">Slide</a> - <a href="?transition=convex#/transitions">Convex</a> - <a href="?transition=concave#/transitions">Concave</a> - <a href="?transition=zoom#/transitions">Zoom</a>
-          </p>
-        </section>
-        <section id="themes">
-          <h2>Themes</h2>
-          <p>reveal.js comes with a few themes built in: <br>
-            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck.--><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a><br><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> - <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-          </p>
-        </section>
-        <section>
-          <section data-background="#dddddd">
-            <h2>Slide Backgrounds</h2>
-            <p>Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.</p><a href="#" class="navigate-down"><img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow"></a>
-          </section>
-          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-            <h2>Image Backgrounds</h2>
-            <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-          </section>
-          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-            <h2>Tiled Backgrounds</h2>
-            <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;
-</code></pre>
-          </section>
-          <section data-backround-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-              <h2>Video Backgrounds</h2>
-              <pre></pre><code style="word-wrap: break-word;">
-                &lt;section data-background-video="video.mp4,video.webm"&gt;
-                </code>
-            </div>
-          </section>
-          <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-            <h2>... and GIFs!</h2>
-          </section>
-        </section>
-        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-          <h2>Background Transitions</h2>
-          <p>Different background transitions are available via the backgroundTransition option. This one's called "zoom".</p>
-          <pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-        </section>
-        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-          <h2>Background Transitions</h2>
-          <p>You can override background transitions per-slide.</p>
-          <pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;
-</code></pre>
-        </section>
-        <section>
-          <h2>Pretty Code</h2>
-          <pre><code data-trim contenteditable>function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}</code></pre>
-          <p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.
-            
-          </p>
-        </section>
-        <section>
-          <h2>Marvelous Lists</h2>
+        <section data-background="url(img/jason-lengstorf.jpg)" class="push-right light-text">
+          <h1>Who Am I?</h1>
           <ul>
-            <li>No order here</li>
-            <li>Or here</li>
-            <li>Or here</li>
-            <li>Or here</li>
+            <li class="fragment">Consultant for startups &amp; agencies</li>
+            <li class="fragment">Pixel pushing since 2003</li>
+            <li class="fragment">Author of 3 books on nerd shit</li>
+            <li class="fragment">Just passed 1 year mustache-free</li>
+            <li class="fragment">No home address</li>
           </ul>
         </section>
         <section>
-          <h2>Fantastic Ordered Lists</h2>
-          <ol>
-            <li>One is smaller than...</li>
-            <li>Two is smaller than...</li>
-            <li>Three!</li>
-          </ol>
+          <h2>We Have a Problem:</h2>
+          <h1>Our Current Relationship with Work Is <strong>Fucked</strong></h1>
+          <aside class="notes">
+            And not, like, "we'll talk about this in the morning and everything will
+            be fine" fucked.
+            
+            More like everything-thing-you-own-is-on-fire-in-the-front-lawn fucked.
+            
+            We'll talk more about this in a minute. Move on.
+            
+            
+          </aside>
         </section>
         <section>
-          <h2>Tabular Tables</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Value</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Apples</td>
-                <td>$1</td>
-                <td>7</td>
-              </tr>
-              <tr>
-                <td>Lemonade</td>
-                <td>$2</td>
-                <td>18</td>
-              </tr>
-              <tr>
-                <td>Bread</td>
-                <td>$3</td>
-                <td>2</td>
-              </tr>
-            </tbody>
-          </table>
+          <p><small>(I learned this the hard way.)</small></p>
+          <aside class="notes">
+            I&rsquo;m not very good at learning things by example.
+            <br>
+            I am, rather, the kind of idiot that has to burn my hand on the stove
+            to learn not to touch the burners.
+            <br>
+            And, like many of us who can only learn things the hard way...
+            
+            
+          </aside>
+        </section>
+        <section data-background="url(img/mustache.jpg)" class="light-text">
+          <h1 class="fragment dim-the-lights">This Was Not a<br><strong>Choice</strong></h1>
+          <aside class="notes">...I ended up with a mustache.</aside>
+        </section>
+        <section data-background="url(img/fireplace.gif)" class="light-text">
+          <h3>Story Time!</h3>
+          <div class="hide-me">
+            <h1><strong>Black Friday</strong></h1>
+            <h2>- or -</h2>
+            <h2>How I Nearly<br>Killed My Beard</h2>
+          </div>
+          <aside class="notes">
+            Stories are always better in the glow of a fireplace, right? But I guess
+            this is a tech crowd, so fireplaces are probably a little too
+            old-fashioned. How about instead...
+            
+          </aside>
+        </section>
+        <section data-background="url(img/ipad-glow.jpg)" class="light-text">
+          <h3>Story Time!</h3>
+          <div class="fragment dim-the-lights always-on">
+            <h1><strong>Black Friday</strong></h1>
+          </div>
+          <div class="fragment always-on">
+            <h2>- or -</h2>
+          </div>
+          <div class="fragment always-on">
+            <h2>How I Nearly<br>Killed My Beard</h2>
+          </div>
+          <aside class="notes">...we curl up in the warm glow of the Apple logo?</aside>
+        </section>
+        <section data-background="url(img/fireplace.gif)" class="light-text">
+          <aside class="notes">
+            Since I'm talking about a Fortune 500 company, I don't want to put any
+            branding up behind me. Let's stick with the fireplace.
+            
+            
+          </aside>
         </section>
         <section>
-          <h2>Clever Quotes</h2>
-          <p>These guys come in two forms, inline: 
-            <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-          </p>
-          <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-            &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+          <h1>Working These Crazy Hours Was <strong>Normal</strong></h1>
+          <aside class="notes">
+            Most days, I'd wake up around 9, check my email immediately, and stay
+            connected to work almost constantly — while getting coffee, during meals,
+            at drinks with friends — all day. I'd stay up late because I believed I
+            could get more done after email and chat died down; often I'd be up until
+            2 or 3 in the morning. In 2013, I was working 70–90 hours each week.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h2>This Wasn&rsquo;t Working.</h2>
+          <h1>I Had to Make a<br><strong>Change</strong></h1>
+        </section>
+        <section>
+          <p>...or I was going to die.</p>
+        </section>
+        <section data-transition="zoom-in fade-out" data-state="show-faces">
+          <h1>I Wasn&rsquo;t Alone</h1>
+        </section>
+        <section data-background="url(img/are-you-in-the-overkill-cult.jpg)" class="light-text">
+          <aside class="notes">
+            I put my story in an article on my blog, which I later cross-posted on
+            Medium.com.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h3>The Cult of Overwork You Never Meant to Join</h3>
+          <ul>
+            <li class="fragment visible current-fragment">Published April 15<sup>1</sup></li>
+            <li class="fragment">Front Page of Hacker News</li>
+            <li class="fragment">Top Stories on Medium for a Week</li>
+            <li class="fragment">Republished on several other sites</li>
+            <li class="fragment">Over 90,000 views</li>
+            <li class="fragment">Thousands of social media shares</li>
+            <li class="fragment">Dozens of emails sharing similar personal stories</li>
+          </ul>
+        </section>
+        <section data-state="smash-it-up">
+          <h1>We All Know Something Is <strong class="demolish">Broken</strong></h1>
+        </section>
+        <section>
+          <h1>So&hellip; Why Is <strong>Nothing</strong> Changing?</h1>
+        </section>
+        <section>
+          <h2>Work, as It Exists Today</h2>
+          <ul>
+            <li class="fragment">94% of knowledge workers work 50+ hours per week<sup>2</sup></li>
+            <li class="fragment">41% of workers don&rsquo;t use their vacation days<sup>3</sup></li>
+            <li class="fragment">At least one firm has people <em>faking</em> workaholism<sup>4</sup></li>
+            <li class="fragment">&ldquo;Death from overwork&rdquo; is an <em>actual fucking thing</em><sup>5</sup></li>
+          </ul>
+          <aside class="notes">
+            We work too much and feel guilty saying we need a break. Lack of sleep is
+            
+            
+          </aside>
+        </section>
+        <section data-background="url(img/karoshi.jpg)" data-state="dimmer" class="light-text">
+          <h1><strong>Karōshi</strong></h1>
+          <h2>過労死</h2>
+          <p>Literally: &ldquo;death from overwork&rdquo; in Japanese.</p>
+        </section>
+        <section>
+          <h1>The Qualities We <strong>Like Most</strong> About Ourselves</h1>
+          <h2>Have Turned Against Us</h2>
+          <aside class="notes">
+            All the things we like about ourselves — ambition, perseverance, passion
+            — can be used for evil if we're not careful: obsession, not knowing when
+            enough is enough, sacrificing when it's a bad idea to sacrifice.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <blockquote>&ldquo;I&rsquo;ll sleep when I&rsquo;m dead.&rdquo;</blockquote>
+        </section>
+        <section>
+          <blockquote>
+            &ldquo;I can&rsquo;t hang out tonight; I&rsquo;m working on this really
+            important deadline for work.&rdquo;
+            
             
           </blockquote>
         </section>
         <section>
-          <h2>Intergalactic Interconnections</h2>
-          <p>You can link between slides internally, <a href="#/2/3">like this</a>.
-            
-          </p>
+          <h1>But There&rsquo;s a <strong>Problem</strong></h1>
         </section>
         <section>
-          <h2>Speaker View</h2>
-          <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.
-            
-          </p>
+          <h1>Working This Hard Makes Us <strong>worse</strong> at Our Jobs</h1>
+        </section>
+        <section>
+          <h2>Working 60-Hour Weeks</h2>
+          <h1>Will Result in <strong>Negative</strong> Productivity</h1>
+          <p>Compared to the same period of time at 40 hours a week.<sup>6</sup></p>
           <aside class="notes">
-            <Oh>hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).</Oh>
+            It turns out that working more than 40 hours a week is actually worse for
+            productivity. After a month or two, our exhaustion takes too big a toll
+            on us: we start making more mistakes; we spend more time staring into
+            space while we unconsciously refresh our inboxes — we're "working", but
+            we're not really getting much done.
+            
+            
+          </aside>
+        </section>
+        <section><img src="http://lengstorf.com/wp-content/uploads/2015/03/overtime-negative-productivity.jpg">
+          <aside class="notes">
+            This leads to a drop in output that eventually costs the company money.
+            Let me repeat that, because it's <em>huge</em>.
+            
+            
+          </aside>
+        </section>
+        <section data-state="drain-cash">
+          <h2>Companies that Require</h2>
+          <h3>(or even allow)</h3>
+          <h1>60+ Hours Are <strong>Losing <span class="fade-away">Money</span></strong></h1>
+        </section>
+        <section>
+          <h2>In More Ways than One:</h2>
+          <ul>
+            <li class="fragment">Overwork kills passion and engagement<sup>7</sup></li>
+            <li class="fragment">Longer hours lead to higher turnover<sup>8</sup></li>
+            <li class="fragment">Creativity drops off significantly</li>
+            <li class="fragment">Overall happiness starts to suffer</li>
+          </ul>
+          <aside class="notes">
+            Overworked employees are more stressed, unhappier, unhealthier, and more
+            resentful of their jobs. Our jobs — especially those of us who started
+            out "chasing our passion" — should NOT feel like burdens; if they do,
+            we're fucking up.
+            
+            
           </aside>
         </section>
         <section>
-          <h2>Export to PDF</h2>
-          <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-          <iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
-        </section>
-        <section>
-          <h2>Global State</h2>
-          <p>Set <code>data-state="something"</code> on a slide and <code>"something"</code> will be added as a class to the document element when the slide is open. This lets you apply broader style changes, like switching the page background.
+          <h2>After 19 Hours Awake,</h2>
+          <h1>You May As Well <strong>Be Drunk</strong></h1>
+          <p>Because that's how impaired your performance is.<sup>9</sup></p>
+          <aside class="notes">
+            Your ability to perform cognitive tasks goes to shit if you don't get
+            enough sleep. And these effects are cumulative: if you don't sleep enough
+            one night, the next day you're impaired faster, and so on.
             
-          </p>
-        </section>
-        <section data-state="customevent">
-          <h2>State Events</h2>
-          <p>Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.</p>
-          <pre><code data-trim contenteditable style="font-size: 18px;" class="javascript">Reveal.addEventListener( 'customevent', function() {
-  console.log( '"customevent" has fired' );
-} );
-</code></pre>
-        </section>
-        <section>
-          <h2>Take a Moment</h2>
-          <p>
-            Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
             
-          </p>
+          </aside>
         </section>
         <section>
-          <h2>Much more</h2>
+          <h3>Pat consistently showed up to work after drinking 4 beers.</h3>
+          <h1 class="fragment always-on">Current Status:</h1>
+          <h1 class="fragment get-stamped">Unemployed</h1>
+        </section>
+        <section>
+          <h3>Terry consistently shows up to work after sleeping 4 hours.</h3>
+          <h1 class="fragment always-on">Current Status:</h1>
+          <h1 class="fragment">&ldquo;Hard Worker&rdquo;</h1>
+          <aside class="notes">
+            Find a good clapping GIF to fade into the background here.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h3>We Want to Blame the Workplace</h3>
+          <h1>But Work Only <strong>Mirrors</strong> Our Own Habits</h1>
+          <aside class="notes">We're not victims of our workplace culture. We <strong>define</strong> our
+            workplace culture.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h1>It Feels Like We&rsquo;re Just&hellip; <strong class="fragment">Stuck</strong></h1>
+        </section>
+        <section>
+          <p>But don't give up hope just yet.</p>
+        </section>
+        <section>
+          <h2>Companies with Healthy Working Cultures Exist</h2>
+          <h1><strong>Today</strong></h1>
+        </section>
+        <section>
+          <h2><span class="fragment">New Relic</span> &nbsp; <span class="fragment">Buffer</span></h2>
+          <h2 class="fragment">Precision Nutrition</h2>
+          <h2><span class="fragment">&amp;yet</span> &nbsp; <span class="fragment">Automattic</span></h2>
+          <h3 class="fragment">&amp; many more&hellip;</h3>
+        </section>
+        <section>
+          <h2>But&hellip;</h2>
+          <h1 class="fragment"><strong>How?</strong></h1>
+        </section>
+        <section>
+          <h3>Step 1:</h3>
+          <h1><strong class="shrinker">Rethink</strong></h1>
+          <h2>How We Measure Value</h2>
+        </section>
+        <section>
+          <h2>As Knowledge Workers,<br>We&rsquo;re Paid for the</h2>
+          <h1><strong>Results</strong> We Deliver</h1>
+        </section>
+        <section>
+          <h2>&hellip;and Not the</h2>
+          <h1><strong>Hours</strong> On the Job</h1>
+        </section>
+        <section>
+          <h3>Measuring Employees&rsquo; Value by Time:</h3>
           <ul>
-            <li>Right-to-left support</li>
-            <li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-            <li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+            <li class="fragment">Says, &ldquo;I don&rsquo;t trust you.&rdquo;</li>
+            <li class="fragment">Measures quantity over quality</li>
+            <li class="fragment">Punishes efficiency</li>
+            <li class="fragment">Rewards inefficiency</li>
           </ul>
         </section>
         <section>
-          <h1>THE END</h1>
-          <p>- <a href="http://slides.com">Try the online editor</a><br>- <a href="https://github.com/jlengstorf/reveal.js-jade">Source code</a><br>- <a href="https://github.com/hakimel/reveal.js">Original project and documentation</a></p>
+          <h1>If My Task for Today Is Done In <strong>4 Hours</strong></h1>
+          <h2>I&rsquo;m Done for the Day</h2>
+          <aside class="notes">
+            The goal isn't to wring out every last productive second from a team;
+            instead, we should be setting clear, realistic deadlines and letting our
+            teams complete them. If they're consistently done in half the allotted
+            time, these are your star employees — don't punish them with extra work.
+            Reward them with more exciting projects, bonuses, etc.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h3>Step 2:</h3>
+          <h1><strong class="shrinker">Refocus</strong></h1>
+          <h2>On the Right Goals</h2>
+        </section>
+        <section>
+          <h1>We Want to Produce the <strong>Best Work</strong> Possible</h1>
+        </section>
+        <section>
+          <h2>To Do That, We Need</h2>
+          <h1><strong class="fader"><span>&nbsp;</span><span class="fragment visible current-fragment">Sleep</span><span class="fragment">Leisure</span><span class="fragment">Health</span><span class="fragment">Passion</span><span>&nbsp;</span></strong></h1>
+          <aside class="notes">
+            Without sleep, we can't perform at our best. Without leisure time, we cut
+            off our subconscious mind from processing new ideas. Without our health,
+            we end up missing work and adding more stress. Without passion, a job is
+            just a job: we stop doing work we're proud of and start punching a clock.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h2>Success Is a Long Road</h2>
+          <p>We can&rsquo;t sacrifice our long-term well-being for short-term gains.</p>
+        </section>
+        <section>
+          <h3>Step 3:</h3>
+          <h1><strong class="shrinker">Reward</strong></h1>
+          <h2>The Right Behaviors</h2>
+        </section>
+        <section>
+          <h2>Set Sane Guidelines &amp;</h2>
+          <h1><strong>Ensure</strong> They&rsquo;re Used</h1>
+        </section>
+        <section>
+          <h1>Let the Team <strong>Choose</strong></h1>
+          <h2>How They Work Best</h2>
+          <aside class="notes">
+            Some people can't work unless they're in an office. Others do better in a
+            coffee shop. Some need complete silence in a home office. Don't fall into
+            the trap of trying to force different people to be productive the same
+            way. Everyone needs the freedom to do their best work.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h2>The Most Effective Management Tool Is</h2>
+          <h1><strong>Trust</strong></h1>
+          <aside class="notes">
+            A team that feels trusted will take ownership of projects. When we have
+            someone hanging over our shoulder second-guessing all our decisions, we
+            don't feel in control. Control allows us to make decisions that we know
+            will help. You hired people for their skills; trust them to apply those
+            skills.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h3>Step 4:</h3>
+          <h1><strong class="shrinker">Regain</strong></h1>
+          <h2>Control of Your Time</h2>
+        </section>
+        <section>
+          <h1>You Are the <strong>Only One</strong></h1>
+          <h2>In Charge of Your Life</h2>
+          <aside class="notes">
+            Accept responsibility. We got ourselves into this mess, and only we can
+            get ourselves out. You may not be the boss, but ultimately no one can
+            force you to work more than you're willing to give. Placing the blame on
+            outside factors is making excuses.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h1>When You&rsquo;re Done with Work,</h1>
+          <h1><strong>Be Done</strong> with Work.</h1>
+        </section>
+        <section>
+          <h1><strong>Control</strong> Your Attention</h1>
+          <aside class="notes">
+            Will a notification make you more capable of working from dinner? I turn
+            off all notifications on my phone except the ones that are truly
+            critical. A mention on Twitter is not critical. I will check it when I
+            have down time, and the world will continue to not end.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <h1>Regularly Take <strong>Full Days</strong> Off from Work</h1>
+          <aside class="notes">
+            Recharging your batteries makes you better at working. Promise.
+            
+            
+          </aside>
+        </section>
+        <section>
+          <p>Fixing the way we work is worth the effort. Remember&hellip;</p>
+        </section>
+        <section>
+          <h2>We&rsquo;re Some of the</h2>
+          <h1><strong>Luckiest</strong></h1>
+          <h1>Workers on <strong>Earth</strong></h1>
+        </section>
+        <section>
+          <h1>We Create Something from <strong>Nothing</strong></h1>
+        </section>
+        <section>
+          <h1>We Add More <strong>Beauty</strong> to the World</h1>
+        </section>
+        <section>
+          <h2>Let&rsquo;s Make Sure We</h2>
+          <h1><strong>Survive</strong> to Enjoy It</h1>
+        </section>
+        <section>
+          <h1><strong>Thank You</strong></h1>
+          <p><small>(Let&rsquo;s be friends on Twitter.)</small></p>
+        </section>
+        <section class="resourcetext">
+          <h1>Resources:</h1>
+          <ol>
+            <li><a href="https://medium.com/digital-nomad-stories/the-cult-of-work-you-never-meant-to-join-cd965fb9ea1a">The Cult of Work You Never Meant to Join</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2014/01/27/the-cult-of-overwork">The Cult of Overwork</a></li>
+            <li><a href="http://theatln.tc/1LD3pLd">41% of American Workers Let Paid Vacation Days Go to Waste</a></li>
+            <li><a href="http://www.nytimes.com/2015/05/05/upshot/how-some-men-fake-an-80-hour-workweek-and-why-it-matters.html">How Some Men Fake an 80-Hour Workweek, and Why It Matters</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Kar%C5%8Dshi">Karōshi on Wikipedia</a></li>
+            <li><a href="http://www.enginesofmischief.com/makers/evan/pubs/crunch.html">Why Crunch Mode Doesn&rsquo;t Work: 6 Lessons</a></li>
+            <li><a href="http://www.employment-studies.co.uk/report-summary-working-long-hours-review-evidence-volume-1-%E2%80%93-main-report">Working Long Hours: a Review of the Evidence</a></li>
+            <li><a href="http://www.nytimes.com/2014/06/01/opinion/sunday/why-you-hate-work.html?_r=0">Why You Hate Work</a></li>
+            <li><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1739867/pdf/v057p00649.pdf">
+                Moderate sleep deprivation produces impairments in cognitive and motor performance equivalent to legally prescribed levels of alcohol intoxication
+                </a></li>
+          </ol>
         </section>
       </div>
     </div>
+    <div class="hashtag">
+      <p>
+        Tweet:
+        <a href="https://twitter.com/intent/tweet?text=Happy%20People%20Do%20It%20Better%20by%20%40jlengstorf&amp;amp;hashtags=FILive&amp;amp;related=jlengstorf" target="_blank">@jlengstorf #FILive</a>
+      </p>
+    </div>
+    <footer>
+      <ul class="inline">
+        <li>&ldquo;Happy People Do It Better&rdquo; by <a href="http://lengstorf.com/">Jason Lengstorf</a></li>
+        <li><a href="https://twitter.com/jlengstorf">@jlengstorf</a></li>
+        <li><a href="https://github.com/jlengstorf">
+            github.com/jlengstorf
+            </a></li>
+      </ul>
+    </footer>
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
     <script>
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,
-        progress: true,
+        width: 1240,
+        height: 700,
+        controls: false,
+        progress: false,
         history: true,
         center: true,
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
         dependencies: [
           { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
           { src: 'plugin/notes/notes.js', async: true }
         ]
       });
       
     </script>
+    <script src="js/lengstorf.min.js"></script>
   </body>
 </html>

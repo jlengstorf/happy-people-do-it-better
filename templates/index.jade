@@ -3,305 +3,849 @@ extends layouts/presentation
 
 //- Customize the title, meta description, and author using this block.
 block title
-  title reveal.js + Jade - The HTML Presentation Framework
+  title Happy People Do It Better
   meta(
     name="description"
-    content="A framework for easily creating beautiful presentations using HTML by @hakimel. Ported to Jade by @jlengstorf."
+    content="A Look at Work-Life Balance and Long-Term Productivity"
   )
-  meta(name="author" content="Hakim El Hattab")
+  meta(name="author" content="Jason Lengstorf")
+
+block theme
+  link(rel="stylesheet" href="css/theme/lengstorf.css" id="template")
+
+block styles
+  //- Font Awesome for icons
+  link(
+    rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  )
+
+  //- Typography.com (because Everything Is Better With Gotham™)
+  link(
+    rel="stylesheet"
+    href="//cloud.typography.com/6102252/617726/css/fonts.css"
+  )
 
 
-//- Add your slides here. See templates/includes/_mixins.jade for information 
+//- Add your slides here. See templates/includes/_mixins.jade for information
 //- on how `+slide` works.
 block slides
-  +slide
-    h1 Reveal.js + Jade
-    h3 A shortcut for faster slideshow authoring.
-    p
-      small.
-        Created by #[a(href="http://hakim.se") Hakim El Hattab] / 
-        #[a(href="https://twitter.com/hakimel") @hakimel]
-    p
-      small.
-        Ported to #[a(href="http://jade-lang.com") Jade] by 
-        #[a(href="http://lengstorf.com") Jason Lengstorf] / 
-        #[a(href="https://twitter.com/jlengstorf") jlengstorf]
+  //-
+    Add basic info about the presentation. This needs to be added inside the
+    `slides` block or Jade won't see the variables and things get confusing.
+  - var title = 'Happy People Do It Better';
+  - var metaDescription = 'A Look at Work-Life Balance and Long-Term Productivity';
+  - var author = 'Jason Lengstorf';
+  - var authorLink = 'http://lengstorf.com/';
+  - var authorEmail = 'jason@lengstorf.com';
+  - var twitterHandle = 'jlengstorf';
+  - var githubHandle = 'jlengstorf';
+  - var hashtag = 'FILive';
+
+
+  //---------------------------------------------------------------------------
 
   +slide
-    h2 Hello there
-    p.
-      reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+    h1 Happy People#[br]Do It Better
 
-  +slide
-    +slide
-      h2 Vertical slides
-      p Slides can be nested inside of each other.
+    p Avoiding Burnout and Increasing Happiness
       br
-      a.navigate-down(href="#")
-        img(width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow")
+      | by Creating Better Work-Life Balance
 
-    +slide
-      h2 Basement Level 1
-      p.
-        Nested slides are useful for adding additional detail underneath a high level horizontal slide.
 
-    +slide
-      h2 Basement Level 2
-      p That's it, time to go back up.
+    p by #[a(href=authorLink)= author]
       br
-      a(href="#/2")
-        img(width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg)")
+      small
+        a(href="https://twitter.com/" + twitterHandle)= twitterHandle
+        |  |&nbsp;
+        a(href="mailto:" + authorEmail)= authorEmail
 
-  +slide
-    h2 Slides
-    p.
-      Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at #[a(href="http://slides.com" target="_blank")= "http://slides.com"].
 
-  +slide
-    h2 Point of View
-    p.
-      Press #[strong ESC] to enter the slide overview.
-    p.
-      Hold down alt and click on any element to zoom in on it using #[a(href="http://lab.hakim.se/zoom-js") zoom.js]. Alt + click anywhere to zoom back out.
+  //---------------------------------------------------------------------------
 
-  +slide
-    h2 Touch Optimized
-    p.
-      Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-
-  +slide(data-markdown=true).
-    ## Markdown Support
-
-    Write content using inline or external Markdown.
-    Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-    ```
-    <section data-markdown>
-      ## Markdown support
-
-      Write content using inline or external Markdown.
-      Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-    </section>
-    ```
-
-  +slide
-    +slide#fragments
-      h2 Fragments
-      p Hit the next arrow...
-      p.fragment ... to step through ...
-      p.
-        #[span.fragment ... a] #[span.fragment fragmented] #[span.fragment slide.]
-
-      aside.notes
-        This slide has fragments which are also stepped through in the notes window.
-
-    +slide
-      h2 Fragment Styles
-      p There are different types of fragments, like:
-      each type in ['grow', 'shrink', 'fade-out', 'current-visible', 'highlight-red', 'highlight-blue']
-        p(class=type).fragment type
-
-  +slide#transitions
-    h2 Transition Styles
-    p You can select from different transitions, like:
-      br
-      - var count = 0;
-      each transition in ['None', 'Fade', 'Slide', 'Convex', 'Concave', 'Zoom']
-        if count++!==0
-          |  - 
-        a(href="?transition=" + transition.toLowerCase() + "#/transitions")= transition
-
-  +slide#themes
-    h2 Themes
-    p reveal.js comes with a few themes built in: 
-      br
-      // Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck.
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;") Black (default)
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;") White
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;") League
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;") Sky
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;") Beige
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;") Simple
-      br
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;") Serif
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;") Blood
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;") Night
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;") Moon
-      |  - 
-      a(href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;") Solarized
-
-  +slide
-    +slide(data-background="#dddddd")
-      h2 Slide Backgrounds
-      p.
-        Set #[code data-background="#dddddd"] on a slide to change the background color. All CSS color formats are supported.
-      a(href="#").navigate-down
-        img(width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow")
-
-    +slide(data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png")
-      h2 Image Backgrounds
-      pre
-        code &lt;section data-background="image.png"&gt;
-
-    +slide(data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px")
-      h2 Tiled Backgrounds
-      pre
-        code(style="word-wrap: break-word;").
-          &lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;
-
-    +slide(data-backround-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000")
-      div(style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;")
-        h2 Video Backgrounds
-        pre
-        code(style="word-wrap: break-word;").
-          &lt;section data-background-video="video.mp4,video.webm"&gt;
-
-    +slide(data-background="http://i.giphy.com/90F8aUepslB84.gif")
-      h2 ... and GIFs!
-
-  +slide(data-transition="slide" data-background="#4d7e65" data-background-transition="zoom")
-    h2 Background Transitions
-    p.
-      Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-    pre
-      code Reveal.configure({ backgroundTransition: 'zoom' })
-
-  +slide(data-transition="slide" data-background="#b5533c" data-background-transition="zoom")
-    h2 Background Transitions
-    p You can override background transitions per-slide.
-    pre
-      code(style="word-wrap: break-word;").
-        &lt;section data-background-transition="zoom"&gt;
-
-  +slide
-    h2 Pretty Code
-    pre
-      code(data-trim contenteditable).
-        function linkify( selector ) {
-          if( supports3DTransforms ) {
-
-            var nodes = document.querySelectorAll( selector );
-
-            for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className ) {
-                node.className += ' roll';
-              }
-            }
-          }
-        }
-    p.
-      Code syntax highlighting courtesy of #[a(href="http://softwaremaniacs.org/soft/highlight/en/description/") highlight.js].
-
-  +slide
-    h2 Marvelous Lists
+  +slide.push-right.light-text(data-background="url(img/jason-lengstorf.jpg)")
+    h1 Who Am I?
     ul
-      li No order here
-      li Or here
-      li Or here
-      li Or here
+      li.fragment Consultant for startups &amp; agencies
+      li.fragment Pixel pushing since 2003
+      li.fragment Author of 3 books on nerd shit
+      li.fragment Just passed 1 year mustache-free
+      li.fragment No home address
+
+
+  //---------------------------------------------------------------------------
+    PART 1: We Have a Problem
 
   +slide
-    h2 Fantastic Ordered Lists
-    ol
-      li One is smaller than...
-      li Two is smaller than...
-      li Three!
+    h2 We Have a Problem:
+    h1 Our Current Relationship with Work Is #[strong Fucked]
+
+    aside.notes.
+      And not, like, "we'll talk about this in the morning and everything will
+      be fine" fucked.
+
+      More like everything-thing-you-own-is-on-fire-in-the-front-lawn fucked.
+
+      We'll talk more about this in a minute. Move on.
+
+
+  //---------------------------------------------------------------------------
 
   +slide
-    h2 Tabular Tables
-    table
-      thead
-        tr
-          th Item
-          th Value
-          th Quantity
-      tbody
-        tr
-          td Apples
-          td $1
-          td 7
-        tr
-          td Lemonade
-          td $2
-          td 18
-        tr
-          td Bread
-          td $3
-          td 2
-
-  +slide
-    h2 Clever Quotes
-    p.
-      These guys come in two forms, inline: #[q(cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations") &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;] and block:
-    blockquote(cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations").
-      &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-
-  +slide
-    h2 Intergalactic Interconnections
-    p.
-      You can link between slides internally, #[a(href="#/2/3") like this].
-
-  +slide
-    h2 Speaker View
-    p.
-      There's a #[a(href="https://github.com/hakimel/reveal.js#speaker-notes") speaker view]. It includes a timer, preview of the upcoming slide as well as your speaker notes.
-
-    aside.notes
-      Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-
-  +slide
-    h2 Export to PDF
-    p.
-      Presentations can be #[a(href="https://github.com/hakimel/reveal.js#pdf-export") exported to PDF], here's an example:
-    iframe(src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen)
-
-  +slide
-    h2 Global State
-    p.
-      Set #[code data-state="something"] on a slide and #[code "something"] will be added as a class to the document element when the slide is open. This lets you apply broader style changes, like switching the page background.
-
-  +slide(data-state="customevent")
-    h2 State Events
-    p.
-      Additionally custom events can be triggered on a per slide basis by binding to the #[code data-state] name.
-    pre
-      code.javascript(data-trim contenteditable style="font-size: 18px;").
-        Reveal.addEventListener( 'customevent', function() {
-          console.log( '"customevent" has fired' );
-        } );
-
-  +slide
-    h2 Take a Moment
-    p.
-      Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-
-  +slide
-    h2 Much more
-    ul
-      li Right-to-left support
-      li #[a(href="https://github.com/hakimel/reveal.js#api") Extensive JavaScript API]
-      li #[a(href="https://github.com/hakimel/reveal.js#auto-sliding") Auto-progression]
-      li #[a(href="https://github.com/hakimel/reveal.js#parallax-background") Parallax backgrounds]
-      li #[a(href="https://github.com/hakimel/reveal.js#keyboard-bindings") Custom keyboard bindings]
-
-  +slide
-    h1 THE END
     p
-      | - 
-      a(href="http://slides.com") Try the online editor
+      small (I learned this the hard way.)
+
+    aside.notes.
+      I&rsquo;m not very good at learning things by example.
+      #[br]
+      I am, rather, the kind of idiot that has to burn my hand on the stove
+      to learn not to touch the burners.
+      #[br]
+      And, like many of us who can only learn things the hard way...
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-background="url(img/mustache.jpg)").light-text
+    h1.fragment.dim-the-lights This Was Not a
       br
-      | - 
-      a(href="https://github.com/jlengstorf/reveal.js-jade") Source code
+      strong Choice
+
+    aside.notes ...I ended up with a mustache.
+
+
+  //---------------------------------------------------------------------------
+    1.1 — My story
+
+  +slide(data-background="url(img/fireplace.gif)").light-text
+    h3 Story Time!
+    .hide-me
+      h1
+        strong Black Friday
+      h2 - or -
+      h2 How I Nearly#[br]Killed My Beard
+
+    aside.notes.
+      Stories are always better in the glow of a fireplace, right? But I guess
+      this is a tech crowd, so fireplaces are probably a little too
+      old-fashioned. How about instead...
+
+  //- ...duplicated this slide for a visual gag...
+
+  +slide(data-background="url(img/ipad-glow.jpg)").light-text
+    h3 Story Time!
+    .fragment.dim-the-lights.always-on
+      h1
+        strong Black Friday
+    .fragment.always-on
+      h2 - or -
+    .fragment.always-on
+      h2 How I Nearly#[br]Killed My Beard
+
+    aside.notes ...we curl up in the warm glow of the Apple logo?
+
+  +slide(data-background="url(img/fireplace.gif)").light-text
+    aside.notes.
+      Since I'm talking about a Fortune 500 company, I don't want to put any
+      branding up behind me. Let's stick with the fireplace.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 Working These Crazy Hours Was #[strong Normal]
+
+    aside.notes.
+      Most days, I'd wake up around 9, check my email immediately, and stay
+      connected to work almost constantly — while getting coffee, during meals,
+      at drinks with friends — all day. I'd stay up late because I believed I
+      could get more done after email and chat died down; often I'd be up until
+      2 or 3 in the morning. In 2013, I was working 70–90 hours each week.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 This Wasn&rsquo;t Working.
+    h1 I Had to Make a
       br
-      | - 
-      a(href="https://github.com/hakimel/reveal.js") Original project and documentation
+      strong Change
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    p ...or I was going to die.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-transition="zoom-in fade-out" data-state="show-faces")
+    h1 I Wasn&rsquo;t Alone
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-background="url(img/are-you-in-the-overkill-cult.jpg)").light-text
+    aside.notes.
+      I put my story in an article on my blog, which I later cross-posted on
+      Medium.com.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 The Cult of Overwork You Never Meant to Join
+    ul
+      li.fragment.visible.current-fragment Published April 15
+        sup 1
+      li.fragment Front Page of Hacker News
+      li.fragment Top Stories on Medium for a Week
+      li.fragment Republished on several other sites
+      li.fragment Over 90,000 views
+      li.fragment Thousands of social media shares
+      li.fragment Dozens of emails sharing similar personal stories
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-state="smash-it-up")
+    h1 We All Know Something Is #[strong.demolish Broken]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 So&hellip; Why Is #[strong Nothing] Changing?
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 Work, as It Exists Today
+    ul
+      li.fragment 94% of knowledge workers work 50+ hours per week#[sup 2]
+      li.fragment 41% of workers don&rsquo;t use their vacation days#[sup 3]
+      li.fragment At least one firm has people #[em faking] workaholism#[sup 4]
+      li.fragment &ldquo;Death from overwork&rdquo; is an #[em actual fucking thing]#[sup 5]
+
+    aside.notes.
+      We work too much and feel guilty saying we need a break. Lack of sleep is
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-background="url(img/karoshi.jpg)" data-state="dimmer").light-text
+    h1
+      strong Karōshi
+    h2 過労死
+    p Literally: &ldquo;death from overwork&rdquo; in Japanese.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 The Qualities We #[strong Like Most] About Ourselves
+    h2 Have Turned Against Us
+
+    aside.notes.
+      All the things we like about ourselves — ambition, perseverance, passion
+      — can be used for evil if we're not careful: obsession, not knowing when
+      enough is enough, sacrificing when it's a bad idea to sacrifice.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    blockquote &ldquo;I&rsquo;ll sleep when I&rsquo;m dead.&rdquo;
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    blockquote.
+      &ldquo;I can&rsquo;t hang out tonight; I&rsquo;m working on this really
+      important deadline for work.&rdquo;
+
+
+  //---------------------------------------------------------------------------
+    Here's where we talk about the problems with this mindset
+  +slide
+    h1 But There&rsquo;s a #[strong Problem]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 Working This Hard Makes Us #[strong worse] at Our Jobs
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 Working 60-Hour Weeks
+    h1 Will Result in #[strong Negative] Productivity
+    p Compared to the same period of time at 40 hours a week.#[sup 6]
+
+    aside.notes.
+      It turns out that working more than 40 hours a week is actually worse for
+      productivity. After a month or two, our exhaustion takes too big a toll
+      on us: we start making more mistakes; we spend more time staring into
+      space while we unconsciously refresh our inboxes — we're "working", but
+      we're not really getting much done.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    img.stretch(src="http://lengstorf.com/wp-content/uploads/2015/03/overtime-negative-productivity.jpg")
+
+    aside.notes.
+      This leads to a drop in output that eventually costs the company money.
+      Let me repeat that, because it's #[em huge].
+
+
+  //---------------------------------------------------------------------------
+
+  +slide(data-state="drain-cash")
+    h2 Companies that Require
+    h3 (or even allow)
+    h1 60+ Hours Are #[strong Losing #[span.fade-away Money]]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 In More Ways than One:
+    ul
+      li.fragment Overwork kills passion and engagement#[sup 7]
+      li.fragment Longer hours lead to higher turnover#[sup 8]
+      li.fragment Creativity drops off significantly
+      li.fragment Overall happiness starts to suffer
+
+    aside.notes.
+      Overworked employees are more stressed, unhappier, unhealthier, and more
+      resentful of their jobs. Our jobs — especially those of us who started
+      out "chasing our passion" — should NOT feel like burdens; if they do,
+      we're fucking up.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 After 19 Hours Awake,
+    h1 You May As Well #[strong Be Drunk]
+    p Because that's how impaired your performance is.#[sup 9]
+
+    aside.notes.
+      Your ability to perform cognitive tasks goes to shit if you don't get
+      enough sleep. And these effects are cumulative: if you don't sleep enough
+      one night, the next day you're impaired faster, and so on.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Pat consistently showed up to work after drinking 4 beers.
+    h1.fragment.always-on Current Status:
+    h1.fragment.get-stamped Unemployed
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Terry consistently shows up to work after sleeping 4 hours.
+    h1.fragment.always-on Current Status:
+    h1.fragment &ldquo;Hard Worker&rdquo;
+
+    aside.notes.
+      Find a good clapping GIF to fade into the background here.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 We Want to Blame the Workplace
+    h1 But Work Only #[strong Mirrors] Our Own Habits
+
+    aside.notes.
+      We're not victims of our workplace culture. We #[strong define] our
+      workplace culture.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 It Feels Like We&rsquo;re Just&hellip; #[strong.fragment Stuck]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    p But don't give up hope just yet.
+
+
+  //---------------------------------------------------------------------------
+    PART 2
+  +slide
+    h2 Companies with Healthy Working Cultures Exist
+    h1 #[strong Today]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 #[span.fragment New Relic] &nbsp; #[span.fragment Buffer]
+    h2.fragment Precision Nutrition
+    h2 #[span.fragment &amp;yet] &nbsp; #[span.fragment Automattic]
+    h3.fragment &amp; many more&hellip;
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 But&hellip;
+    h1.fragment
+      strong How?
+
+
+  //---------------------------------------------------------------------------
+    PART 3
+  +slide
+    h3 Step 1:
+    h1 #[strong.shrinker Rethink]
+    h2 How We Measure Value
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 As Knowledge Workers,#[br]We&rsquo;re Paid for the
+    h1 #[strong Results] We Deliver
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 &hellip;and Not the
+    h1 #[strong Hours] On the Job
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Measuring Employees&rsquo; Value by Time:
+    ul
+      li.fragment Says, &ldquo;I don&rsquo;t trust you.&rdquo;
+      li.fragment Measures quantity over quality
+      li.fragment Punishes efficiency
+      li.fragment Rewards inefficiency
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 If My Task for Today Is Done In #[strong 4 Hours]
+    h2 I&rsquo;m Done for the Day
+
+    aside.notes.
+      The goal isn't to wring out every last productive second from a team;
+      instead, we should be setting clear, realistic deadlines and letting our
+      teams complete them. If they're consistently done in half the allotted
+      time, these are your star employees — don't punish them with extra work.
+      Reward them with more exciting projects, bonuses, etc.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Step 2:
+    h1 #[strong.shrinker Refocus]
+    h2 On the Right Goals
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 We Want to Produce the #[strong Best Work] Possible
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 To Do That, We Need
+    h1
+      strong.fader
+        span &nbsp;
+        span.fragment.visible.current-fragment Sleep
+        span.fragment Leisure
+        span.fragment Health
+        span.fragment Passion
+        span &nbsp;
+
+    aside.notes.
+      Without sleep, we can't perform at our best. Without leisure time, we cut
+      off our subconscious mind from processing new ideas. Without our health,
+      we end up missing work and adding more stress. Without passion, a job is
+      just a job: we stop doing work we're proud of and start punching a clock.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 Success Is a Long Road
+    p We can&rsquo;t sacrifice our long-term well-being for short-term gains.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Step 3:
+    h1 #[strong.shrinker Reward]
+    h2 The Right Behaviors
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 Set Sane Guidelines &amp;
+    h1 #[strong Ensure] They&rsquo;re Used
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 Let the Team #[strong Choose]
+    h2 How They Work Best
+
+    aside.notes.
+      Some people can't work unless they're in an office. Others do better in a
+      coffee shop. Some need complete silence in a home office. Don't fall into
+      the trap of trying to force different people to be productive the same
+      way. Everyone needs the freedom to do their best work.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 The Most Effective Management Tool Is
+    h1 #[strong Trust]
+
+    aside.notes.
+      A team that feels trusted will take ownership of projects. When we have
+      someone hanging over our shoulder second-guessing all our decisions, we
+      don't feel in control. Control allows us to make decisions that we know
+      will help. You hired people for their skills; trust them to apply those
+      skills.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h3 Step 4:
+    h1 #[strong.shrinker Regain]
+    h2 Control of Your Time
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 You Are the #[strong Only One]
+    h2 In Charge of Your Life
+    aside.notes.
+      Accept responsibility. We got ourselves into this mess, and only we can
+      get ourselves out. You may not be the boss, but ultimately no one can
+      force you to work more than you're willing to give. Placing the blame on
+      outside factors is making excuses.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 When You&rsquo;re Done with Work,
+    h1 #[strong Be Done] with Work.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 #[strong Control] Your Attention
+
+    aside.notes.
+      Will a notification make you more capable of working from dinner? I turn
+      off all notifications on my phone except the ones that are truly
+      critical. A mention on Twitter is not critical. I will check it when I
+      have down time, and the world will continue to not end.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 Regularly Take #[strong Full Days] Off from Work
+    aside.notes.
+      Recharging your batteries makes you better at working. Promise.
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    p Fixing the way we work is worth the effort. Remember&hellip;
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 We&rsquo;re Some of the
+    h1
+      strong Luckiest
+    h1 Workers on #[strong Earth]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 We Create Something from #[strong Nothing]
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1 We Add More #[strong Beauty] to the World
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h2 Let&rsquo;s Make Sure We
+    h1 #[strong Survive] to Enjoy It
+
+
+  //---------------------------------------------------------------------------
+
+  +slide
+    h1
+      strong Thank You
+    p
+      small (Let&rsquo;s be friends on Twitter.)
+
+
+  //---------------------------------------------------------------------------
+
+  +slide.resourcetext
+   h1 Resources:
+   ol
+    li
+      a(href="https://medium.com/digital-nomad-stories/the-cult-of-work-you-never-meant-to-join-cd965fb9ea1a").
+        The Cult of Work You Never Meant to Join
+    li
+      a(href="http://www.newyorker.com/magazine/2014/01/27/the-cult-of-overwork").
+        The Cult of Overwork
+    li
+      a(href="http://theatln.tc/1LD3pLd").
+        41% of American Workers Let Paid Vacation Days Go to Waste
+    li
+      a(href="http://www.nytimes.com/2015/05/05/upshot/how-some-men-fake-an-80-hour-workweek-and-why-it-matters.html").
+        How Some Men Fake an 80-Hour Workweek, and Why It Matters
+    li
+      a(href="http://en.wikipedia.org/wiki/Kar%C5%8Dshi").
+        Karōshi on Wikipedia
+    li
+      a(href="http://www.enginesofmischief.com/makers/evan/pubs/crunch.html").
+        Why Crunch Mode Doesn&rsquo;t Work: 6 Lessons
+    li
+      a(href="http://www.employment-studies.co.uk/report-summary-working-long-hours-review-evidence-volume-1-%E2%80%93-main-report").
+        Working Long Hours: a Review of the Evidence
+    li
+      a(href="http://www.nytimes.com/2014/06/01/opinion/sunday/why-you-hate-work.html?_r=0").
+        Why You Hate Work
+    li
+      a(href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1739867/pdf/v057p00649.pdf").
+        Moderate sleep deprivation produces impairments in cognitive and motor performance equivalent to legally prescribed levels of alcohol intoxication
+
+//-
+  OUTLINE:
+
+  Part I: We have a problem
+
+    - Our relationship with work is fucked
+    - I learned this the hard way
+      - Beard story
+      - Overworking like this wasn't unusual for me
+    - I shared my story
+      - Went nuts online, tons of email from people who felt the same way
+    - So what's going on?
+    - Here's how things are today:
+      - Stats
+      - Karoshi
+    - We've been duped by our own best qualities
+      - All the things we like about ourselves:
+        - ambition
+        - perseverance
+        - passion
+      - Can be used for evil if we're not careful:
+        - obsession
+        - not knowing when enough is enough
+        - sacrificing when it's a bad idea to sacrifice
+    - Workplace culture reflects this attitude and encourages it
+      - Have to show up early to show you care
+      - Can't leave before your coworkers ... to show you care
+      - Have to be available **always**
+      - Must prioritize work over all else
+      - "Sleep when you're dead"
+    - This is not just unhealthy; it's wrong.
+    - Overworking hurts employees:
+      - worse health
+      - less sleep (which is a whole issue in itself)
+      - more burnout
+      - lower life satisfaction
+    - Overworking hurts businesses:
+      - higher turnover
+      - lower engagement
+      - less output
+      - more mistakes (decreased efficiency)
+      - increased resentment (shittier culture)
+
+
+  Part II: There's a better way (for everyone)
+
+    - There are companies doing things the right way
+      - New Relic
+      - Buffer
+      - Precision Nutrition
+    - Best Buy used ROWE
+      - Turnover plummeted (nearly cut in half)
+      - Engagement went up
+      - The company didn't fail
+      - (Until some jerk came in and ruined it for everyone.)
+    -
+
+
+  Part III: Here's how you can do it *today*
+
+    - We need to reassess what work means
+      -
+    - Time ≠ Productivity
+      - Measure results, not hours
+    -
+
+
+  Part I: The Way We Work Is Broken
+  Part II: There's a Better Way (for Everyone)
+  Part III: Here's How to Do It
+
+  The idea is to take all the problems from both sides: how our current working culture negatively effects both workers and businesses; how fixing it helps both; how to implement solutions organizationally and personally.
+
+  I'm going to try not to be too prescriptive about anything, but instead give general talking points and rough guidelines for solving problems — the details will vary too much from person to person (and business to business).
+
+  - What is the Overkill Cult?
+      - Quote
+      - Our best qualities are used against us
+  - The Beard Story pt. 1 (Black Friday)
+  - The lies of the OC
+      - Can't leave early
+      - More hours equals more output
+      - Sleep when you're dead
+      - Time on anything but work is wasted
+  - The Beard Story pt. 2 (the patch appears, mustache, full burnout)
+  - The Truth About Work
+      - We work for a better life
+      - Productivity is not linear
+      - Rewarding butts in chairs sends the wrong message
+      - Sleep is not optional
+      - Alone (disconnected) time is essential (subconscious, creativity)
+      - Play makes us better at everything
+  - If We Know All This, Why Is It Happening?
+      - For workers:
+          - Passion spins into obsession
+          - The desire to provide becomes focused only on money
+          - Peer pressure mounts
+          - Exhaustion and burnout snowball until it feels like you can't get ahead
+      - For businesses:
+          - Poor planning leads to looming deadlines
+          - Crunch mode leads to overworking
+          - Overworking leads to lower productivity
+          - Lower productivity leads to more looming deadlines
+  - Everyone Wins with Healthier Work Habits
+      - Employees get:
+          - Lower stress
+          - Better health
+          - More time for their loved ones/hobbies
+          - Increased productivity
+          - Increased happiness
+          - Better job satisfaction
+          - More creativity
+      - Businesses get:
+          - Fewer absences
+          - Lower overhead (remote workers are cheaper; useless employees are outed)
+          - Increased profits (due to increased productivity)
+          - Better engagement
+          - Lower turnover rates
+          - More innovation (due to boosted creativity)
+  - The Beard Story pt. 3 (radical reprioritization, more productivity, recovery)
+  - How to Escape
+      - Accept responsibility: you're not a victim, and you always have a choice
+      - Set limits for yourself and others
+      - Take control of your attention span
+      - Group tasks by context
+      - Plan full days off
+      - When you're not at work, stop working
+  - How to Fix Your Company Culture
+      - Reward the right type of behavior (results-based work)
+      - Be flexible with your employees' working styles (remote, office, open)
+      - Enforce good behavior (no email after hours, etc. — New Relic)
+      - Trust the team (transparency, ownership, etc. — Holocracy et al.)
+  - The Solution Is Simple. Not Easy
+      - Old habits die hard
+      - We have to stay vigilant until better habits take hold
+      - Try to remember that the world won't fall apart if you're not checking email
+  - Close Your Computer. Go Outside. And Call Your Friends; They Miss You.
+
+
+block extras
+  .hashtag
+    - var intent = 'https://twitter.com/intent/tweet?text=';
+    - var tweetText = title + ' by @' + twitterHandle;
+    - var encodedText = encodeURIComponent(tweetText);
+    - var tweetHashtags = '&amp;hashtags=' + hashtag;
+    - var tweetRelated = '&amp;related=' + twitterHandle;
+    - var tweetUrl = intent + encodedText + tweetHashtags + tweetRelated;
+    p.
+      Tweet:
+      #[a(href=tweetUrl target="_blank") @#{twitterHandle} ##{hashtag}]
+  footer
+    ul.inline
+      li.
+        &ldquo;#{title}&rdquo; by #[a(href=authorLink) #{author}]
+      li
+        a(href="https://twitter.com/"+twitterHandle).
+          @#{twitterHandle}
+      li
+        a(href="https://github.com/"+githubHandle).
+          github.com/#{githubHandle}
+
+block defaultscripts
+  script(src="lib/js/head.min.js")
+  script(src="js/reveal.js")
+  script.
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      width: 1240,
+      height: 700,
+      controls: false,
+      progress: false,
+      history: true,
+      center: true,
+      transition: 'fade', // none/fade/slide/convex/concave/zoom
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+
+block scripts
+  script(src="js/lengstorf.min.js")

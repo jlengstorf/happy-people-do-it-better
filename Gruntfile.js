@@ -26,8 +26,30 @@ module.exports = function(grunt) {
 			build: {
 				src: 'js/reveal.js',
 				dest: 'js/reveal.min.js'
-			}
+			},
+      custom: {
+        options: {
+          banner: '',
+          sourceMap: 'js/lengstorf.min.js.map',
+          sourceMapIn: 'js/lengstorf.js.map',
+          sourceMapIncludeSources: true
+        },
+        files: {
+          'js/lengstorf.min.js': ['js/lengstorf.js']
+        }
+      }
 		},
+
+    babel: {
+      options: {
+        sourceMap: true
+      },
+      custom: {
+        files: {
+          'js/lengstorf.js': 'js/custom.js'
+        }
+      }
+    },
 
 		sass: {
 			core: {
@@ -51,7 +73,10 @@ module.exports = function(grunt) {
 		autoprefixer: {
 			dist: {
 				src: 'css/reveal.css'
-			}
+			},
+      theme: {
+        src: 'css/theme/lengstorf.css'
+      }
 		},
 
 		cssmin: {
@@ -126,7 +151,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			js: {
-				files: [ 'Gruntfile.js', 'js/reveal.js' ],
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'js/custom.js' ],
 				tasks: 'js'
 			},
 			theme: {
@@ -157,17 +182,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-jade' );
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
-	grunt.loadNpmTasks( 'grunt-autoprefixer' );
+  grunt.loadNpmTasks( 'grunt-autoprefixer' );
+	grunt.loadNpmTasks( 'grunt-babel' );
 	grunt.loadNpmTasks( 'grunt-zip' );
 
 	// Default task
 	grunt.registerTask( 'default', [ 'css', 'js' ] );
 
 	// JS task
-	grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
+	grunt.registerTask( 'js', [ 'jshint', 'babel', 'uglify', 'qunit' ] );
 
 	// Theme CSS
-	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
+	grunt.registerTask( 'css-themes', [ 'sass:themes', 'autoprefixer' ] );
 
 	// Core framework CSS
 	grunt.registerTask( 'css-core', [ 'sass:core', 'autoprefixer', 'cssmin' ] );
