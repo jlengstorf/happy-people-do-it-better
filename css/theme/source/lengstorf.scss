@@ -98,6 +98,8 @@ html {
       font-weight: 900;
     }
 
+    h3 { font-weight: 900; }
+
     small {
         color: lighten($mainColor, 20%);
         letter-spacing: .01em;
@@ -485,7 +487,7 @@ section .left,section .right {
     }
 
     100% {
-        background-size: 20px;
+        background-size: 100px;
         transform: translate3d(0, 0, 0);
     }
 }
