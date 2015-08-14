@@ -396,9 +396,9 @@ section .left,section .right {
         transparentize($mainColor, 0.85) 79%,
         $backgroundColor 80%
     );
-    background-size: 300px;
+    background-size: 100px;
     background-position: center;
-    animation: 4s showfaces ease-out 1 forwards;
+    // animation: 4s showfaces ease-out 1 forwards;
 
     &::before,&::after {
         content: '';
@@ -408,8 +408,8 @@ section .left,section .right {
         display: block;
         width: 100vw;
         height: 100vh;
-        animation: 4s showfaces ease-out 1 forwards;
-        background-size: 300px;
+        // animation: 4s showfaces ease-out 1 forwards;
+        background-size: 100px;
     }
 
     // Head

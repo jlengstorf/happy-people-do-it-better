@@ -521,10 +521,8 @@ section .left, section .right {
 
 .show-faces body {
   background-image: radial-gradient(circle closest-side, rgba(48, 44, 39, 0.15) 0%, rgba(48, 44, 39, 0.15) 79%, #fcf8f3 80%);
-  background-size: 300px;
-  background-position: center;
-  -webkit-animation: 4s showfaces ease-out 1 forwards;
-          animation: 4s showfaces ease-out 1 forwards; }
+  background-size: 100px;
+  background-position: center; }
   .show-faces body::before, .show-faces body::after {
     content: '';
     position: absolute;
@@ -533,9 +531,7 @@ section .left, section .right {
     display: block;
     width: 100vw;
     height: 100vh;
-    -webkit-animation: 4s showfaces ease-out 1 forwards;
-            animation: 4s showfaces ease-out 1 forwards;
-    background-size: 300px; }
+    background-size: 100px; }
   .show-faces body::before {
     background-image: radial-gradient(circle closest-side at 50% 40%, #fcf8f3 0%, #fcf8f3 49%, rgba(252, 248, 243, 0) 50%);
     background-position: center; }
